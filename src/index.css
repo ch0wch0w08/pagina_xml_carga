@@ -1,0 +1,108 @@
+
+
+@import "tailwindcss";
+
+@theme {
+  --color-bg: var(--bg);
+  --color-text-main: var(--text);
+  --color-text-h: var(--text-h);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-surface: var(--surface);
+  --color-muted: var(--muted);
+  --color-accent-soft: var(--accent-soft);
+  --shadow-main: 0 18px 45px rgba(15, 44, 58, 0.1);
+  --font-sans: var(--sans);
+  --font-heading: var(--heading);
+}
+
+:root {
+  --bg: #f4f8fa;
+  --surface: #ffffff;
+  --text: #50636d;
+  --text-h: #123242;
+  --muted: #78909c;
+  --border: #dce8ed;
+  --accent: #0f8792;
+  --accent-dark: #09626d;
+  --accent-soft: #e6f5f5;
+  --sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --heading: 'Plus Jakarta Sans', var(--sans);
+  font: 16px/150% var(--sans);
+  color-scheme: light;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+#root {
+  width: 100%;
+  margin: 0 auto;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  background:
+    radial-gradient(circle at 85% 0%, rgba(15, 135, 146, 0.08), transparent 28rem),
+    var(--bg);
+}
+
+body {
+  margin: 0;
+}
+
+h1, h2, h3 {
+  font-family: var(--heading);
+  font-weight: 700;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: clamp(1.7rem, 3vw, 2.35rem);
+  letter-spacing: -0.04em;
+}
+
+button, select {
+  font: inherit;
+}
+
+button {
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+button:not(:disabled):hover {
+  transform: translateY(-1px);
+}
+
+select:focus, button:focus-visible {
+  outline: 3px solid rgba(15, 135, 146, 0.2);
+  outline-offset: 2px;
+}
+
+::selection {
+  color: white;
+  background: var(--accent);
+}
+
+.table-scroll {
+  scrollbar-color: var(--accent) var(--accent-soft);
+  scrollbar-width: thin;
+}
+
+.table-scroll::-webkit-scrollbar {
+  height: 10px;
+}
+
+.table-scroll::-webkit-scrollbar-track {
+  background: var(--accent-soft);
+}
+
+.table-scroll::-webkit-scrollbar-thumb {
+  border: 2px solid var(--accent-soft);
+  border-radius: 999px;
+  background: var(--accent);
+}
